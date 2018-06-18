@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -9,19 +11,27 @@ export default class HelloWorld extends React.Component {
   /**
    * @param props - Comes from your rails view.
    */
-  constructor(props) {
-    super(props);
 
-    // How to set initial state in ES6 class syntax
-    // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
-    this.state = { name: this.props.name };
+  state = {
+    name: this.props.name,
+    selectedOption: '',
   }
 
   updateName = (name) => {
     this.setState({ name });
   };
 
+  handleChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    // selectedOption can be null when the `x` (close) button is clicked
+    if (selectedOption) {
+      console.log(`Selected: ${selectedOption.label}`);
+    }
+  }
+
   render() {
+    const { selectedOption, name } = this.state;
+
     return (
       <div>
         <h3>
@@ -29,13 +39,22 @@ export default class HelloWorld extends React.Component {
         </h3>
         <hr />
         <form >
+          <Select
+            name="form-field-name"
+            value={selectedOption}
+            onChange={this.handleChange}
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+            ]}
+          />
           <label htmlFor="name">
             Say hello to:
           </label>
           <input
             id="name"
             type="text"
-            value={this.state.name}
+            value={name}
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
