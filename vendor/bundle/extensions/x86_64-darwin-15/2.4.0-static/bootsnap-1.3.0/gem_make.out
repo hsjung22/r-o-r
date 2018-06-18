@@ -1,0 +1,15 @@
+current directory: /Users/hyun/Desktop/playground/react-on-rails-app/vendor/bundle/gems/bootsnap-1.3.0/ext/bootsnap
+/Users/hyun/.rbenv/versions/2.4.2/bin/ruby -r ./siteconf20180618-46312-uqta7c.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hyun/Desktop/playground/react-on-rails-app/vendor/bundle/gems/bootsnap-1.3.0/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/hyun/Desktop/playground/react-on-rails-app/vendor/bundle/gems/bootsnap-1.3.0/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/hyun/Desktop/playground/react-on-rails-app/vendor/bundle/gems/bootsnap-1.3.0/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20180618-46312-1xq9lva/bootsnap
