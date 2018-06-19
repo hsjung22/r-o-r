@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Select from 'react-select';
+import Edit from './Edit';
+import Read from './Read';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -14,6 +16,7 @@ export default class HelloWorld extends React.Component {
   state = {
     name: this.props.name,
     selectedOption: '',
+    editMode: false,
   }
 
   updateName = (name) => {
@@ -28,8 +31,12 @@ export default class HelloWorld extends React.Component {
     }
   }
 
+  handleModeChange = () => {
+    this.setState(prevState => ({ editMode: !prevState.editMode }));
+  }
+
   render() {
-    const { selectedOption, name } = this.state;
+    const { selectedOption, name, editMode } = this.state;
 
     return (
       <div>
@@ -57,6 +64,11 @@ export default class HelloWorld extends React.Component {
             onChange={(e) => this.updateName(e.target.value)}
           />
         </form>
+
+        <hr />
+        {editMode
+          ? <Edit handleModeChange={this.handleModeChange} />
+          : <Read handleModeChange={this.handleModeChange} />}
       </div>
     );
   }
