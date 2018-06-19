@@ -3,6 +3,8 @@ import React from 'react';
 import Select from 'react-select';
 import Edit from './Edit';
 import Read from './Read';
+import Element from 'whatever/Element';
+import First from 'anything/First';
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -69,6 +71,9 @@ export default class HelloWorld extends React.Component {
         {editMode
           ? <Edit handleModeChange={this.handleModeChange} />
           : <Read handleModeChange={this.handleModeChange} />}
+        <hr />
+        <Element />
+        <First />
       </div>
     );
   }
