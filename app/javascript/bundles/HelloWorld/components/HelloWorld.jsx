@@ -5,6 +5,7 @@ import Edit from './Edit';
 import Read from './Read';
 import Element from 'whatever/Element';
 import First from 'anything/First';
+import PhoneInput from 'react-phone-number-input'
 
 export default class HelloWorld extends React.Component {
   static propTypes = {
@@ -19,6 +20,7 @@ export default class HelloWorld extends React.Component {
     name: this.props.name,
     selectedOption: '',
     editMode: false,
+    phone: '1231231234',
   }
 
   updateName = (name) => {
@@ -74,6 +76,11 @@ export default class HelloWorld extends React.Component {
         <hr />
         <Element />
         <First />
+        <PhoneInput
+          placeholder="Enter phone number"
+          value={ this.state.phone }
+          onChange={ phone => this.setState({ phone }) }
+        />
       </div>
     );
   }

@@ -6,5 +6,7 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+import 'react-phone-number-input/rrui.css'
+import 'react-phone-number-input/style.css'
 import 'react-select/dist/react-select.css';
 console.log('Hello World from Webpacker')
