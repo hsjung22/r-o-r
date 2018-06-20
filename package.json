@@ -8,6 +8,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-on-rails": "11.0.8",
+    "react-phone-number-input": "^1.1.7",
     "react-select": "^1.2.1"
   },
   "devDependencies": {
